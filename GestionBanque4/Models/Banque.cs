@@ -1,11 +1,12 @@
 ﻿using GestionBanque1.Models;
+using GestionBanque4.Models;
 
 
 namespace GestionBanque2.Models
 {
     public class Banque
     {
-        private List<Courant> comptes = new ();
+        private List<Compte> comptes = new ();
         public string Nom { get; set; }
 
         private string SavePath
@@ -30,16 +31,16 @@ namespace GestionBanque2.Models
             }
         }
 
-        public Courant? this[string numero]
+        public Compte? this[string numero]
         {
             get 
             {
-                Courant? c = comptes.Find(c => c.Numero == numero);
+                Compte? c = comptes.Find(c => c.Numero == numero);
                 return c;
             }
         } 
 
-        public void Ajouter(Courant courant)
+        public void Ajouter(Compte courant)
         {
             // permet de vérifier si il existe déjà un compte dans la banque avec ce numero 
             if(comptes.Any(c => c.Numero == courant.Numero))
@@ -54,7 +55,7 @@ namespace GestionBanque2.Models
         {
             // Chercher un compte dans la liste de comptes
             // qui repond à une condition
-            Courant? c = comptes.Find(c => c.Numero == numero);
+            Compte? c = comptes.Find(c => c.Numero == numero);
             if(c == null)
             {
                 // plus déclencher une erreur
@@ -65,7 +66,7 @@ namespace GestionBanque2.Models
 
         public double AvoirDesComptes(string nom, string prenom)
         {
-            List<Courant> comptesDuTitulaire = comptes.Where(c => c.Titulaire.Nom == nom && c.Titulaire.Prenom == prenom).ToList();
+            List<Compte> comptesDuTitulaire = comptes.Where(c => c.Titulaire.Nom == nom && c.Titulaire.Prenom == prenom && c is Courant).ToList();
 
             Courant total = new();
             foreach (Courant c in comptesDuTitulaire)
@@ -89,7 +90,7 @@ namespace GestionBanque2.Models
                 Directory.CreateDirectory(DirectoryPath);
             }
 
-            List<string> data = comptes.Select(item => $"{item.Numero},{item.Solde},{item.LigneDeCredit},{item.Titulaire.Nom},{item.Titulaire.Prenom},{item.Titulaire.DateNaissance}").ToList();
+            List<string> data = comptes.Select(item => $"{item.GetType().Name},{item.Numero},{item.Solde},{(item is Courant ? ((Courant)item).LigneDeCredit : ((Epargne)item).DateDernierRetrait)},{item.Titulaire.Nom},{item.Titulaire.Prenom},{item.Titulaire.DateNaissance}").ToList();
 
             File.WriteAllLines(SavePath, data);
         }
@@ -105,18 +106,34 @@ namespace GestionBanque2.Models
             foreach(string item in data)
             {
                 string[] line = item.Split(",");
-                Courant c = new Courant()
+                Compte c;
+                Personne t = new Personne()
                 {
-                    Numero = line[0],
-                    LigneDeCredit = double.Parse(line[2]),
-                    Titulaire = new Personne()
-                    {
-                        Nom = line[3],
-                        Prenom = line[4],
-                        DateNaissance = DateTime.Parse(line[5]),
-                    }
+                    Nom = line[4],
+                    Prenom = line[5],
+                    DateNaissance = DateTime.Parse(line[6]),
                 };
-                c.Depot(double.Parse(line[1]));
+                if (line[0] == "Courant")
+                {
+                    c = new Courant()
+                    {
+                        Numero = line[1],
+                        LigneDeCredit = double.Parse(line[3]),
+                        Titulaire = t
+                    };
+                    
+                }
+                else
+                {
+                    c = new Epargne()
+                    {
+                        Numero = line[1],
+                        DateDernierRetrait = line[3] == "" ? null : DateTime.Parse(line[3]),
+                        Titulaire = t
+                    };
+                }
+
+                c.Depot(double.Parse(line[2]));
                 Ajouter(c);
             }
         }
