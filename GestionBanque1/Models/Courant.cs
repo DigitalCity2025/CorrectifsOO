@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GezstionBanque1.Models
+namespace GestionBanque1.Models
 {
     public class Courant
     {

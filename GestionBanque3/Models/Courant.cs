@@ -85,5 +85,14 @@ namespace GestionBanque1.Models
 
         #endregion
 
+        #region Surcharges Opérateurs
+        public static Courant operator+(Courant c1, Courant c2)
+        {
+            Courant c = new Courant();
+            c.Solde = Math.Max(c1.Solde, 0) + Math.Max(c2.Solde, 0);
+            return c;
+        }
+        #endregion
+
     }
 }

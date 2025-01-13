@@ -40,5 +40,17 @@ namespace GestionBanque2.Models
             }
             courants.Remove(c);
         } 
+
+        public double AvoirDesComptes(string nom, string prenom)
+        {
+            List<Courant> comptesDuTitulaire = courants.Where(c => c.Titulaire.Nom == nom && c.Titulaire.Prenom == prenom).ToList();
+
+            Courant total = new();
+            foreach (Courant c in comptesDuTitulaire)
+            {
+                total += c;
+            }
+            return total.Solde;
+        }
     }
 }

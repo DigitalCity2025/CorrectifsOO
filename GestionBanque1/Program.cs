@@ -1,4 +1,4 @@
-﻿using GezstionBanque1.Models;
+﻿using GestionBanque1.Models;
 
 Personne personne1 = new Personne()
 {
