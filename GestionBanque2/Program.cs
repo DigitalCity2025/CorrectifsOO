@@ -35,12 +35,7 @@ void AfficherCompte()
         return;
     }
 
-    Console.WriteLine("------------------------");
-    Console.WriteLine($"Numero {c.Numero}");
-    Console.WriteLine($"Solde {c.Solde}");
-    Console.WriteLine($"Nom {c.Titulaire.Nom}");
-    Console.WriteLine($"Prenom {c.Titulaire.Prenom}");
-    Console.WriteLine("------------------------");
+    AfficherInfo(c);
 
     Console.WriteLine("1. Ajouter de l'argent");
     Console.WriteLine("2. Retirer de l'argent");
@@ -55,6 +50,16 @@ void AfficherCompte()
             RetirerArgent(c);
             break;
     }
+}
+
+void AfficherInfo(Courant c)
+{
+    Console.WriteLine("------------------------");
+    Console.WriteLine($"Numero {c.Numero}");
+    Console.WriteLine($"Solde {c.Solde}");
+    Console.WriteLine($"Nom {c.Titulaire.Nom}");
+    Console.WriteLine($"Prenom {c.Titulaire.Prenom}");
+    Console.WriteLine("------------------------");
 }
 
 void AjouterArgent(Courant c)
