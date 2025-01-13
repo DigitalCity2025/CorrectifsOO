@@ -34,7 +34,14 @@ void AfficherCompte()
         Console.WriteLine("Aucun compte existant avec ce numero");
         return;
     }
-    Console.WriteLine($"{c.Numero} {c.Solde} {c.Titulaire.Nom} {c.Titulaire.Prenom}");
+
+    Console.WriteLine("------------------------");
+    Console.WriteLine($"Numero {c.Numero}");
+    Console.WriteLine($"Solde {c.Solde}");
+    Console.WriteLine($"Nom {c.Titulaire.Nom}");
+    Console.WriteLine($"Prenom {c.Titulaire.Prenom}");
+    Console.WriteLine("------------------------");
+
     Console.WriteLine("1. Ajouter de l'argent");
     Console.WriteLine("2. Retirer de l'argent");
 
