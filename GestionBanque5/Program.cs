@@ -55,20 +55,27 @@ void AfficherCompte()
         return;
     }
 
-    AfficherInfo(c);
-
-    Console.WriteLine("1. Ajouter de l'argent");
-    Console.WriteLine("2. Retirer de l'argent");
-
-    key = Console.ReadKey(true).Key;
-    switch (key)
+    while (key != ConsoleKey.Escape)
     {
-        case ConsoleKey.NumPad1:
-            AjouterArgent(c);
-            break;
-        case ConsoleKey.NumPad2:
-            RetirerArgent(c);
-            break;
+        Console.Clear();
+        AfficherInfo(c);
+        Console.WriteLine("1. Ajouter de l'argent");
+        Console.WriteLine("2. Retirer de l'argent");
+        Console.WriteLine("3. Appliquer intérêts");
+
+        key = Console.ReadKey(true).Key;
+        switch (key)
+        {
+            case ConsoleKey.NumPad1:
+                AjouterArgent(c);
+                break;
+            case ConsoleKey.NumPad2:
+                RetirerArgent(c);
+                break;
+            case ConsoleKey.NumPad3:
+                c.AppliquerInterets();
+                break;
+        } 
     }
 }
 

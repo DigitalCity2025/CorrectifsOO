@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Heritage + Polymorphisme"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionBanque4", "GestionBanque4\GestionBanque4.csproj", "{1FF58F68-96F4-451A-88F0-EAB13E5E7640}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 Classes abstraites", "5 Classes abstraites", "{292C321C-DB08-4EAE-AD5D-50D2656A4EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionBanque5", "GestionBanque5\GestionBanque5.csproj", "{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{1FF58F68-96F4-451A-88F0-EAB13E5E7640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FF58F68-96F4-451A-88F0-EAB13E5E7640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FF58F68-96F4-451A-88F0-EAB13E5E7640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,7 @@ Global
 		{53416F38-FCFA-4BDF-8DAC-586457D30FF8} = {B0B1886F-89EA-423C-B91C-F81A2B3960F3}
 		{5D2AE63F-D7C0-426C-85E4-34B23A4834E9} = {AE81B8FE-3B13-43AF-B6AD-B79CDC21C049}
 		{1FF58F68-96F4-451A-88F0-EAB13E5E7640} = {4B26DF99-895B-4D5B-98CE-636C6D98E01D}
+		{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9} = {292C321C-DB08-4EAE-AD5D-50D2656A4EC6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F38930DF-4696-465F-8E83-9507CE51C796}
