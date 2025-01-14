@@ -13,12 +13,34 @@ namespace GestionBanque4.Models
 
         #endregion
 
+        #region Ctors
+
+        public Compte(string numero, Personne titulaire)
+        {
+            Numero = numero;
+            Titulaire = titulaire;
+        }
+
+        protected Compte(string numero, Personne titulaire, double solde)
+        {
+            Numero = numero;
+            Titulaire = titulaire;
+            Solde = solde;
+        }
+
+        #endregion
+
         #region Prop's
 
         public string Numero
         {
             get { return _Numero; }
-            set { _Numero = value; }
+            private set { _Numero = value; }
+        }
+        public Personne Titulaire
+        {
+            get { return _Titulaire; }
+            private set { _Titulaire = value; }
         }
 
         public double Solde
@@ -27,11 +49,6 @@ namespace GestionBanque4.Models
             private set { _Solde = value; }
         }
 
-        public Personne Titulaire
-        {
-            get { return _Titulaire; }
-            set { _Titulaire = value; }
-        }
 
         #endregion
 
