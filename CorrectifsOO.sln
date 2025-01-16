@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 Constructeurs", "6 Constr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionBanque6", "GestionBanque6\GestionBanque6.csproj", "{83FBE55B-9967-4F7E-BA90-0DAC1DCE63F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 Exceptions", "7 Exceptions", "{7FE8EA58-76A3-4DBC-A519-085A939AE0A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionBanque7", "GestionBanque7\GestionBanque7.csproj", "{49D43D9A-8900-46D7-A8D0-D8595177C0F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{83FBE55B-9967-4F7E-BA90-0DAC1DCE63F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83FBE55B-9967-4F7E-BA90-0DAC1DCE63F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83FBE55B-9967-4F7E-BA90-0DAC1DCE63F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D43D9A-8900-46D7-A8D0-D8595177C0F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D43D9A-8900-46D7-A8D0-D8595177C0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D43D9A-8900-46D7-A8D0-D8595177C0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D43D9A-8900-46D7-A8D0-D8595177C0F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,7 @@ Global
 		{1FF58F68-96F4-451A-88F0-EAB13E5E7640} = {4B26DF99-895B-4D5B-98CE-636C6D98E01D}
 		{6AEAAFB3-4A9F-4114-8799-11F9CB64FAA9} = {292C321C-DB08-4EAE-AD5D-50D2656A4EC6}
 		{83FBE55B-9967-4F7E-BA90-0DAC1DCE63F3} = {35F93EEC-D54C-4BEA-832A-58748E449580}
+		{49D43D9A-8900-46D7-A8D0-D8595177C0F3} = {7FE8EA58-76A3-4DBC-A519-085A939AE0A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F38930DF-4696-465F-8E83-9507CE51C796}
